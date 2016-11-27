@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title></title>
+
+<link rel="stylesheet" href="css/base.css" />
+
+<script type="text/javascript" src="src/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="src/base.js"></script>
+    <script src="src/mustache.js"></script>
+</head>
+	<body>
+		<div class="page">
+			<header class="intro-header">
+
+                <img src="image/title2.jpg" width="1024" height="70" usemap="#Map"/>
+                    <map name="Map">
+                        <area shape="rect" coords="42,4,230,66" href="index.html">
+                    </map>
+				<a href="javascript:;" id="back">返回</a>
+			</header>
+			<div class="content">
+				<!--<div class="intro-title">
+					故事
+					<a href="javascript:;">评论</a>
+				</div>
+				<div class="intro-content-max">
+					<!--<div class="dtl4-title">
+						<h2>成就卓越的路径</h2>
+						<h3>——读《更高层面的领导》一书有感</h3>
+					</div>
+					
+					<div class="dtl2-content clearfix">
+						
+						<div class="dtl4-img fL">
+							<img style="margin-left:55px;" width="280" height="390" src="./image/book.jpg" />
+						</div>
+						<div class="dtl4-word fL">
+							<div class="dtl2-sub-title"><b>信息来源--宝钢新闻中心</b>   <span>2014/5/4 15:50  (12次)</span></div>
+							<div class="clearfix" style="line-height:22px">
+								<div class="fL" style="width:260px;line-height:26px;">
+									宝钢国际员工眼中“最美宝钢国际”主题摄影作品征集活动圆满落幕，本次活动不仅充分展示了宝钢国际员工丰富的文化内涵和人文素养，而且进一步积聚了“成为掌握客户需求领先者”的正能量。
+									活动自去年5月启动以来，历时8个多月，收到参赛作品千余幅，在宝钢国际各基层党组织初评、推优的基础上，经宝钢国际专家评委会认真、公正评选，12幅佳作从众多作品中脱颖而出，荣获“最美宝钢国际”优秀作品。
+								</div>
+								<div class="fL" style="width:260px;margin-left:30px;line-height:26px;">
+									在加强交货期管理的同时，八钢还在满足客户的个性化需求上下功夫。板材不同于普通建材，其个性化需求鲜明，很多产品在性能、尺寸规格、公差、偏差等方面要求都不一样。为此，八钢领导以及相关销售人员，逐一走访客户，基本走遍了疆内各地州，全面了解、挖掘客户的个性化需求，针对兰新高铁工程用钢需求，八钢除了供应普通建材以外，还针对该工程防风墙用钢的需求，成功研发、生产出耐候钢，为该工程供应耐候钢1.2万吨。
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>-->
+
+            </div>
+
+            <div style="clear:both"></div>
+            <div id="comment_bar" style="font-size:20px;font-weight: bold;border-top:#A2A2FE 2px solid;margin-top:6px;padding:10px 0 0 12px;">评论</div>
+
+            <div style="height:10px">&nbsp;</div>
+            <div id="commentList">
+
+            </div>
+            <script type="text/templete" id="comment_item">
+        <div style="border-top:1px solid #CFCFCF;margin-top:6px;padding:4px 0;">
+            <div style="padding:0 0 6px 12px;">{{post}}</div>
+            <div style="padding-left:12px;">{{body}}</div>
+        </div>
+        </script>
+            <div class="news-detail-bottom">
+                <input type="text" id="commentBox">
+                <a id="likeNum" href="javascript:page.like()" class="ioc">0</a>
+                <a id="commentNum" href="javascript:page.comment();">评论:0</a>
+            </div>
+			
+			<nav id="footNav">
+					<ul>
+						<li class="press">
+							<a href="javascript:;" id="home">主页</a>
+						</li>
+						<li>
+							<a href="javascript:;">广角</a>
+						</li>
+						<li>
+							<a href="javascript:;">故事</a>
+						</li>
+						<li>
+							<a href="javascript:;">业界</a>
+						</li>
+						<li>
+							<a href="javascript:;">生活</a>
+						</li>
+						<li>
+							<a href="javascript:;">聊吧</a>
+						</li>
+							<li>
+							<a href="javascript:;">查询</a>
+						</li>
+					</ul>
+			</nav>
+		</div>
+		<script>
+			$(document).ready(function(){
+
+				page.init();
+                var param = location.search.split("=")[1];
+                $.ajax({
+                    url:"http://baogang.dpsapi.com/api/node/"+param,
+                    dataType:"json",
+                    success:function(data){
+                        console.log(data);
+                        var i, l, articleHtml = '', imgS='',imgHtml = '',videoS='',videoHtml='',y='',m='',d='',time='',space='',timeBody='',crumbSubNav='',commentCount='';
+                        for (i = 0, l = data.length; i < l; i += 1){
+                            var xArr=new Array();
+                            var xArr=data[i].time.split('');
+                            y = xArr[6] + xArr[7] + xArr[8] + xArr[9];
+                            m = xArr[0] + xArr[1];
+                            d = xArr[3] + xArr[4];
+                            time = xArr[13] + xArr[14] + xArr[15] + xArr[16] + xArr[17];
+                            space = xArr[10] + xArr[11] + xArr[12];
+                            timeBody=y + '.' + m + '.' + d + space + time;
+                            switch (data[i].category) {
+                                case "\u65b0\u95fb":
+                                    crumbSubNav = '&nbsp;-&nbsp' + data[i]['news-sub'];
+                                    break;
+                                case "\u5e7f\u89d2":
+                                    crumbSubNav = '';
+                                    break;
+                                case "\u6545\u4e8b":
+                                    crumbSubNav = '';
+                                    break;
+                                case "\u4e1a\u754c":
+                                    crumbSubNav = '&nbsp;-&nbsp' + data[i]['yejie-sub'];
+                                    break;
+                                case "\u751f\u6d3b":
+                                    crumbSubNav = '&nbsp;-&nbsp' + data[i]['live-sub'];
+                                    break;
+                                case "\u804a\u5427":
+                                    crumbSubNav = '&nbsp;-&nbsp' + data[i]['talk-sub'];
+                                    break;
+                            }
+                            var imgS = eval('(' + data[i]['images'] + ')');
+                            var videoS = eval('(' + data[i]['video'] + ')');
+                            imgHtml = (data[i].images=='[]\n\n\n\n\n\n\n')? '':'<img src="' + imgS[i]['origina'] + ' "  class="dtl1-img" />'
+                            videoHtml = (data[i].video=='[]')? '':'<video src="' + videoS[i]['origina'] + '" controls="controls"></video>'
+
+                            articleHtml += '<div class="intro-title">' + data[i].category + crumbSubNav+'</div>'
+                                    + '<div class="intro-content-max">' + '<div class="dtl4-title">' + '<h2>'
+                                    + data[i].title +'</h2>' + '<h3>' + (data[i].title2?data[i].title2:'')
+                                    + '</h3>' + '</div>'+ '<div class="dtl2-content clearfix">'
+                                    + '<div class="dtl4-img fL">' + imgHtml + '</div>'
+                                    + videoHtml + '<div class="dtl4-word fL">'
+                                    + '<div class="dtl2-sub-title">' + '<b>' + '信息来源：宝钢新闻中心'
+                                    + '</b>' + '&nbsp;&nbsp' + '<span>' + timeBody + '&nbsp;&nbsp'
+                                    +'(' + data[i].commentCount + '次)' + '</span>' + '</div>'
+                                    + '<div class="clearfix" style="line-height:22px">' + '<div class="intro-remark-4" >'
+                                    + data[i].body + '</div>' + '</div>' + '</div>'+'</div>';
+                            commentCount=data[i].commentCount;
+                        }
+                        console.log(articleHtml);
+                        $('.content').html(articleHtml);
+                        page.getCommentList(param);
+                        $('#commentNum').html('评论:' + commentCount);
+                    }
+                });
+
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>文6</title>
+
+	<link rel="stylesheet" href="css/base.css" />
+	<script type="text/javascript" src="src/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript" src="src/base.js"></script>
+    <script src="src/mustache.js"></script>
+</head>
+<body>
+	<div class="page">
+
+		<header class="intro-header">
+            <img src="image/title2.jpg" width="1024" height="70" usemap="#Map" />
+            <map name="Map">
+              <area shape="rect" coords="42,4,230,66" href="index.html">
+            </map>
+			<a href="javascript:;" id="back">返回</a>
+		</header>
+		<div class="content">
+			<!--<div class="intro-title">
+				故事
+				<a href="javascript:;">评论</a>
+			</div>
+			<div class="intro-content">
+				<h1>"企业，我们共同的家"</h1>
+				<h2>———记宝钢金属第三届“温暖冬日”慈善爱心义卖活动</h2>
+				<div class="intro-source"> <b>信息来源:宝钢新闻中心</b>
+					<span>2014/2/24 15:30</span>
+					<span>12次</span>
+				</div>
+				<div class="intro-remark">
+					<div>
+						“我觉得我们宝钢金属的员工都太可爱了，他们是超赞的！”在近日举行的宝钢金属第三届“温暖冬日”慈善爱心拍卖活动的现场，看着同事们如火如荼“抢拍”的场景，活动的主要组织者宝钢金属高级总监陈胤高兴得脸都红了，“每年的活动都得到大家的鼎力支持，非常欣慰。当然，也希望大家能多多出手，把爱心献给那些需要帮助的小朋友。”
+    从2012年起，宝钢金属在冬天都会举办一场慈善爱心拍卖活动，拍品均由员工及外部爱心人士无偿捐赠，拍卖所得全部用于需要帮助的员工子女。据统计，今年活动的拍品达到了151件，为历届之最。陈胤说，其中有不少拍品都是员工们珍藏的宝贝，但为了义卖，他们都忍痛割爱了。记者在现场看到，由金属制品营运中心王工侠捐赠的古董钟小巧精致，颇有收藏价值，吸引了不少爱心人士为它展开激烈竞价。此外，还有47件拍品由员工或员工家属亲手制作。
+					</div>
+					<div>
+						值得一提的是，爱心拍卖活动除得到宝钢金属内部员工的积极响应外，还有许多外部爱心人士也对活动给予了大力支持。如：建设银行宝钢支行彭青云副行长，郑威总经理；招商银行宝山支行张新行长，李雯、高振华经理都捐赠了个人的收藏品。浦发银行宝山支行张华副行长，刘晓锦、王怿劼、顾磊经理；建设银行宝钢支行诸晓春经理；交通银行宝山支行王元博经理还到现场参与爱心拍卖。宝钢新闻中心员工刘杰也捐赠了他的三幅获奖摄影作品。
+    短短的45分钟爱心拍卖活动共募得爱心款14502元。“真的感谢大家！明年我们还会继续办的！”财务部员工既是活动的组织者，又是参与者，他们表示，“虽然为了爱心拍卖，会花费许多个人时间，但是值得。宝钢金属是我们共同的家，希望我们的爱心能让那些小朋友们健康成长，每天都开开心心的。”(记者  沈吉园)
+					</div>
+					<div>
+						<img src="image/newsimg/temp01.jpg" ></div>
+						<div class="clearfix"></div>
+
+				</div>
+
+			</div>-->
+
+		</div>
+        <div style="clear:both"></div>
+        <div id="comment_bar" style="font-size:20px;font-weight: bold;border-top:#A2A2FE 2px solid;margin-top:6px;padding:10px 0 0 12px;">评论</div>
+
+        <div style="height:10px">&nbsp;</div>
+        <div id="commentList">
+
+        </div>
+        <script type="text/templete" id="comment_item">
+        <div style="border-top:1px solid #CFCFCF;margin-top:6px;padding:4px 0;">
+            <div style="padding:0 0 6px 12px;">{{post}}</div>
+            <div style="padding-left:12px;">{{body}}</div>
+        </div>
+        </script>
+        <div class="news-detail-bottom">
+            <input type="text" id="commentBox">
+            <a id="likeNum" href="javascript:page.like()" class="ioc">0</a>
+            <a id="commentNum" href="javascript:page.comment();">评论:0</a>
+        </div>
+
+
+		<nav id="footNav">
+				<ul>
+					<li class="press">
+						<a href="javascript:;" id="home">主页</a>
+					</li>
+					<li>
+						<a href="javascript:;">广角</a>
+					</li>
+					<li>
+						<a href="javascript:;">故事</a>
+					</li>
+					<li>
+						<a href="javascript:;">业界</a>
+					</li>
+					<li>
+						<a href="javascript:;">生活</a>
+					</li>
+					<li>
+						<a href="javascript:;">聊吧</a>
+					</li>
+						<li>
+						<a href="javascript:;">查询</a>
+					</li>
+				</ul>
+		</nav>
+
+	</div>
+	<script>
+		$(document).ready(function(){
+
+			page.init();
+            var param = location.search.split("=")[1];
+            $.ajax({
+                url:"http://baogang.dpsapi.com/api/node/"+param,
+                dataType:"json",
+                success:function(data){
+                    console.log(data);
+                    var i, l, articleHtml = '',imgS='',videoS='',imgHtml='',videoHtml='',y='',m='',d='',time='',space='',timeBody='',crumbSubNav='',commentCount='';
+                    for (i = 0, l = data.length; i < l; i += 1){
+                        var xArr=new Array();
+                        var xArr=data[i].time.split('');
+                        y = xArr[6] + xArr[7] + xArr[8] + xArr[9];
+                        m = xArr[0] + xArr[1];
+                        d = xArr[3] + xArr[4];
+                        time = xArr[13] + xArr[14] + xArr[15] + xArr[16] + xArr[17];
+                        space = xArr[10] + xArr[11] + xArr[12];
+                        timeBody=y + '.' + m + '.' + d + space + time;
+                        switch (data[i].category) {
+                            case "\u65b0\u95fb":
+                                crumbSubNav= '&nbsp;-&nbsp' + data[i]['news-sub'];
+                                break;
+                            case "\u5e7f\u89d2":
+                                crumbSubNav='';
+                                break;
+                            case "\u6545\u4e8b":
+                                crumbSubNav='';
+                                break;
+                            case "\u4e1a\u754c":
+                                crumbSubNav= '&nbsp;-&nbsp' + data[i]['yejie-sub'];
+                                break;
+                            case "\u751f\u6d3b":
+                                crumbSubNav= '&nbsp;-&nbsp' + data[i]['live-sub'];
+                                break;
+                            case "\u804a\u5427":
+                                crumbSubNav= '&nbsp;-&nbsp' + data[i]['talk-sub'];
+                                break;
+                        }
+                        var imgS = eval('(' + data[i]['images'] + ')');
+                        var videoS = eval('(' + data[i]['video'] + ')');
+                        imgHtml = (data[i].images=="[]\n\n\n\n\n\n\n")? '':'<img src="' + imgS[i]['origina'] + ' "  class="dtl1-img" />'
+                        videoHtml = (data[i].video=='[]')? '':'<video src="' + videoS[i]['origina'] + '" controls="controls"></video>'
+                        articleHtml += '<div class="intro-title">' + data[i].category + crumbSubNav+'</div>'
+                                + '<div class="intro-content">' + '<h1>' + data[i].title + '</h1>'
+                                + '<h2>'+ (data[i].title2?data[i].title2:'')
+                                +'</h2>' + '<div class="intro-source">'
+                                + '<b>' + '信息来源：宝钢新闻中心' + '</b>' + '&nbsp;&nbsp;'
+                                + '<span>' + timeBody + '</span>' + '&nbsp;&nbsp;'
+                                + '<span>' + data[i].commentCount + '次' + '</span>'
+                                + '</div>' + '<div class="intro-remark">' + '<div>'
+                                + data[i].body + '</div>' + '</div>' + imgHtml +'</div>'
+                                + '</div>' + videoHtml +'</div>'
+                                + '<div class="clearfix"></div>';
+                        commentCount=data[i].commentCount;
+
+                    }
+                    console.log(articleHtml);
+                    $('.content').html(articleHtml);
+
+                    document.addEventListener('window', function (e) { e.preventDefault(); }, false);
+
+
+                    page.getCommentList(param);
+
+                    $('#commentNum').html('评论:' + commentCount);
+                }
+            });
+
+		});
+	</script>
+</body>
+</html>

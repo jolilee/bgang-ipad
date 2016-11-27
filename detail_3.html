@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title></title>
+
+<link rel="stylesheet" href="css/base.css" />
+
+
+<script type="text/javascript" src="src/jquery-1.9.0.min.js"></script>
+<script type="text/javascript" src="src/base.js"></script>
+    <script src="src/mustache.js"></script>
+</head>
+	<body>
+		<div class="page">
+
+			<header class="intro-header">
+
+                <img src="image/title2.jpg" width="1024" height="70" usemap="#Map" />
+                    <map name="Map">
+                        <area shape="rect" coords="42,4,230,66" href="index.html">
+                    </map>
+				<a href="javascript:;" id="back">返回</a>
+			</header>
+			<div class="content">
+				<!--<div class="intro-title">
+					故事
+					<a href="javascript:;">评论</a>
+				</div>
+				<div class="intro-content-max">
+					<!--<div class="dtl3-title-box"><b class="dtl3-title">信息来源--宝钢新闻中心</b>   <span>     2014/5/4 15:50  (12次)</span></div>
+					<div class="dtl3-content">
+						<div class="dtl3-cell">
+							本报讯  2月8日上午11点，中国在南极的第四个科考站泰山站主楼正式竣工并投入运行。这是宝钢首次采用“设计+采购+施工”EPC一揽子总包承建方式，在南极科考基地构筑的标志性建筑。宝钢项目经理叶超还被国家海洋局任命为中国南极科考站泰山站副站长。
+							泰山站位于已建成的中山站与昆仑站之间的伊丽莎白公主地，海拔高度2621米，年平均温度为零下36.6摄氏度，属于内陆考察度夏站。泰山站总建筑面积1000平方米，其中主楼面积410平方米，其外形为流线感的圆形，顶端有形似“灯笼帽”的观测台，底部架空，远看仿佛一盏红色的灯笼高挂在南极的冰天雪地中，因此，“中国红灯笼”成了泰山站的一个昵称。泰山站采用钢框架支撑作为结构体系，主体建筑分为三层，底层储物，中间层住人，顶层用于科研和观测。泰山站建成后，不仅可满足20人的度夏考察生活，还将成为昆仑站科学考察的前沿支撑，具有进一步拓展中国在南极科学考察的领域和范围的重要作用。
+
+
+						</div>
+						<div class="dtl3-cell">　　会上，湛江钢铁总经理、湛江钢铁工程指挥部常务副总指挥盛更红汇报了湛江钢铁建设进展情况。自去年5月以来，湛江钢铁主体工程进入全面建设阶段，截至目前，湛江钢铁主体工程桩基量已完成26127套。其中，高炉本体、热风炉、矿焦槽基础和炼钢3、4号转炉基础底板已完成，30万吨码头工程和自备电厂工程已进入设备安装调试阶段，厂东区生产配套工程的部分员工公寓、食堂等已投用，其它公辅工程按计划陆续开工建设，进展顺利。
+						　　戴志浩说，今年是湛江钢铁基地项目建设关键年、攻坚年。工程建设是对所有参建单位的一次全面检验，是实现自我超越的一次挑战。他表示，多年来，宝钢和设计、设备、施工各条战线的建设者紧密协作、同舟共济，形成了良好的合作历史和传统。他希望各参建单位与宝钢一起，树立背水一战、破釜沉舟的勇气，传承服务宝钢多年所积累的经验，以一流的品质做好工程设计、项目管理与服务，确保工程质量，携手建设好湛江钢铁。
+						</div>
+
+						<div class="dtl3-cell">
+							　　国文清在座谈会上说，湛江钢铁是宝钢人再造钢铁辉煌的又一个主战场，意义重大。项目启动以来，中冶集团有13家子公司参与项目设计和建设，目前有数千人正以“一天也不耽搁、一天也不懈怠”的精神状态奋战在施工、设计一线，向着既定目标迈进。他要求所有参建单位服从大局，听从指挥，发挥一流的设计水平，配备一流的施工技术，为发展宝钢事业争气，为发展中国钢铁事业争光。
+　　徐乐江代表宝钢向为湛江钢铁工程建设付出辛勤劳动的广大设计、施工、设备和项目管理人员表示衷心感谢，并致以新春祝福。他说，30多年来，宝钢的发展离不开你们的大力支持，如今，我们又相聚湛江东海岛，一起共同圆宝钢湛江钢铁梦，为实现中国钢铁强国梦而努力。徐乐江强调，当前湛江钢铁建设已进入全面建设期，宝钢的目标不仅是建好湛江钢铁，而是要使湛江钢铁成为一个有竞争力的钢铁梦工厂。他希望各建设单位坚持安全第一理念，确保施工质量、进度和投资。
+　
+						</div>
+					</div>
+
+				</div>-->
+
+			</div>
+            <div style="clear:both"></div>
+            <div id="comment_bar" style="font-size:20px;font-weight: bold;border-top:#A2A2FE 2px solid;margin-top:6px;padding:10px 0 0 12px;">评论</div>
+
+            <div style="height:10px">&nbsp;</div>
+            <div id="commentList">
+
+            </div>
+            <script type="text/templete" id="comment_item">
+        <div style="border-top:1px solid #CFCFCF;margin-top:6px;padding:4px 0;">
+            <div style="padding:0 0 6px 12px;">{{post}}</div>
+            <div style="padding-left:12px;">{{body}}</div>
+        </div>
+        </script>
+            <div class="news-detail-bottom">
+                <input type="text" id="commentBox">
+                <a id="likeNum" href="javascript:page.like()" class="ioc">0</a>
+                <a id="commentNum" href="javascript:page.comment();">评论:0</a>
+            </div>
+
+			<nav id="footNav">
+					<ul>
+						<li class="press">
+							<a href="javascript:;" id="home">主页</a>
+						</li>
+						<li>
+							<a href="javascript:;">广角</a>
+						</li>
+						<li>
+							<a href="javascript:;">故事</a>
+						</li>
+						<li>
+							<a href="javascript:;">业界</a>
+						</li>
+						<li>
+							<a href="javascript:;">生活</a>
+						</li>
+						<li>
+							<a href="javascript:;">聊吧</a>
+						</li>
+							<li>
+							<a href="javascript:;">查询</a>
+						</li>
+					</ul>
+			</nav>
+		</div>
+	
+		<script>
+			$(document).ready(function(){
+
+				page.init();
+                var param = location.search.split("=")[1];
+                $.ajax({
+                    url:"http://baogang.dpsapi.com/api/node/"+param,
+                    dataType:"json",
+                    success:function(data){
+                        console.log(data);
+                        var i, l, articleHtml = '',imgS='',y='',m='',d='',time='',space='',timeBody='',crumbSubNav='',commentCount='';
+                        for (i = 0, l = data.length; i < l; i += 1){
+                            var xArr=new Array();
+                            var xArr=data[i].time.split('');
+                            y = xArr[6] + xArr[7] + xArr[8] + xArr[9];
+                            m = xArr[0] + xArr[1];
+                            d = xArr[3] + xArr[4];
+                            time = xArr[13] + xArr[14] + xArr[15] + xArr[16] + xArr[17];
+                            space = xArr[10] + xArr[11] + xArr[12];
+                            timeBody=y + '.' + m + '.' + d + space + time;
+                            switch (data[i].category) {
+                                case "\u65b0\u95fb":
+                                    crumbSubNav = '&nbsp;-&nbsp' + data[i]['news-sub'];
+                                    break;
+                                case "\u5e7f\u89d2":
+                                    crumbSubNav = '';
+                                    break;
+                                case "\u6545\u4e8b":
+                                    crumbSubNav = '';
+                                    break;
+                                case "\u4e1a\u754c":
+                                    crumbSubNav = '&nbsp;-&nbsp' + data[i]['yejie-sub'];
+                                    break;
+                                case "\u751f\u6d3b":
+                                    crumbSubNav = '&nbsp;-&nbsp' + data[i]['live-sub'];
+                                    break;
+                                case "\u804a\u5427":
+                                    crumbSubNav = '&nbsp;-&nbsp' + data[i]['talk-sub'];
+                                    break;
+                            }
+
+                            articleHtml += '<div class="intro-title">' + data[i].category + crumbSubNav+'</div>'
+                                    + '<div class="intro-content-max">' + '<div class="dtl3-title-box">'
+                                    + '<b class="dtl3-title">' + data[i].title + '</b>'
+                                    + '&nbsp;&nbsp' + '<span>' + timeBody
+                                    + '&nbsp;&nbsp' +'(' + data[i].commentCount + '次)'
+                                    + '</span>' + '</div>' + '<div>'
+                                    + '<div class="intro-remark-3">' + data[i].body + '</div>'+ '</div>';
+                            commentCount=data[i].commentCount;
+                        }
+                        console.log(articleHtml);
+                        $('.content').html(articleHtml);
+
+                        page.getCommentList(param);
+                        $('#commentNum').html('评论:' + commentCount);
+                    }
+                });
+
+			});
+		</script>
+	</body>
+</html>

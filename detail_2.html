@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
+
+		<link rel="stylesheet" href="css/base.css" />
+
+		<script type="text/javascript" src="src/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="src/base.js"></script>
+        <script src="src/mustache.js"></script>
+	</head>
+	<body>
+		<div class="page">
+			
+			<header class="intro-header">
+                <img src="image/title2.jpg" width="1024" height="70" usemap="#Map"/>
+                    <map name="Map">
+                        <area shape="rect" coords="42,4,230,66" href="index.html">
+                    </map>
+				<a href="javascript:;" id="back">返回</a>
+			</header>
+			
+			<div class="content">
+				<!--<div class="intro-title">
+					业界-钢铁
+					<a href="javascript:;">评论</a>
+				</div>
+				<div class="intro-content">
+					<!--<div class="dtl2-title">
+							钢铁业首年份报<br>
+							大冶特钢去年净利为2.02亿元
+						</div>
+						
+					<div class="blue-line-dtl2"></div>
+					
+					<div class="dtl2-content">
+						<div class="dtl2-word fL">
+							<div class="dtl2-sub-title"><b>信息来源--宝钢新闻中心</b>   <span>2014/5/4 15:50  (12次)</span></div>
+							<div style="line-height:24px">
+							本报讯  日前，宁钢正式确定了新一轮《环保改善，环境整治专项行动方案》，明确提出“一年有变样，三年大变样，六年建成花园式工厂”创建目标。这是宁钢大力推进建设“美丽宁钢”计划，积极践行“绿色钢企”承诺实施的一项重大举措。
+							近年来，为不断满足周边社区居民和员工对环境持续改善的需求，增强企业可持续发展能力，宁钢积极践行宝钢环境经营理念，以“政府认可，百姓满意”为目标，积极创建环境友好型企业，并通过不断加大环保设施技术投入，提升节能减排技术含量，大力推进工序能耗降低等，实现清洁生产与厂区环境的大幅改善。2009年至今，宁钢吨钢综合能耗下降幅度达11.6%,累计节约标煤达40余万吨。
+							</div>
+			
+						</div>
+						<div class="dtl2-img fL">
+							<img src="./image/newsimg/news_1.jpg" />
+						</div>
+					</div>
+
+				</div>-->
+
+			</div>
+            <div style="clear:both"></div>
+            <div id="comment_bar" style="font-size:20px;border-top:#A2A2FE solid 2px;font-weight: bold;margin-top:6px;padding:10px 0 0 12px;">评论</div>
+
+            <div style="height:10px">&nbsp;</div>
+            <div id="commentList">
+
+            </div>
+            <script type="text/templete" id="comment_item">
+                <div style="border-top:1px solid #CFCFCF;margin-top:6px;padding:4px 0;">
+                    <div style="padding:0 0 6px 12px;">{{post}}</div>
+                    <div style="padding-left:12px;">{{body}}</div>
+                </div>
+            </script>
+            <div class="news-detail-bottom">
+                <input type="text" id="commentBox">
+                <a id="likeNum" href="javascript:page.like()" class="ioc">0</a>
+                <a id="commentNum" href="javascript:page.comment();">评论:0</a>
+            </div>
+
+			<nav id="footNav">
+				<ul>
+					<li class="press">
+						<a href="javascript:;" id="home">主页</a>
+					</li>
+					<li>
+						<a href="javascript:;">广角</a>
+					</li>
+					<li>
+						<a href="javascript:;">故事</a>
+					</li>
+					<li>
+						<a href="javascript:;">业界</a>
+					</li>
+					<li>
+						<a href="javascript:;">生活</a>
+					</li>
+					<li>
+						<a href="javascript:;">聊吧</a>
+					</li>
+						<li>
+						<a href="javascript:;">查询</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<script>
+		$(document).ready(function(){
+
+			page.init();
+            var param = location.search.split("=")[1];
+            $.ajax({
+                url:"http://baogang.dpsapi.com/api/node/"+param,
+                dataType:"json",
+                success:function(data){
+                    console.log(data);
+                    var i, l, articleHtml = '', imgHtml = '',imgS='',videoHtml='',videoS='',y='',m='',d='',time='',space='',timeBody='',crumbSubNav,blueLine='',commentCount='';
+                    for (i = 0, l = data.length; i < l; i += 1){
+                        var xArr=new Array();
+                        var xArr=data[i].time.split('');
+                        y = xArr[6] + xArr[7] + xArr[8] + xArr[9];
+                        m = xArr[0] + xArr[1];
+                        d = xArr[3] + xArr[4];
+                        time = xArr[13] + xArr[14] + xArr[15] + xArr[16] + xArr[17];
+                        space = xArr[10] + xArr[11] + xArr[12];
+                        timeBody=y + '.' + m + '.' + d + space + time;
+                        switch (data[i].category) {
+                            case "\u65b0\u95fb":
+                                crumbSubNav = '&nbsp;-&nbsp' + data[i]['news-sub'];
+                                break;
+                            case "\u5e7f\u89d2":
+                                crumbSubNav = '';
+                                break;
+                            case "\u6545\u4e8b":
+                                crumbSubNav = '';
+                                break;
+                            case "\u4e1a\u754c":
+                                crumbSubNav = '&nbsp;-&nbsp' + data[i]['yejie-sub'];
+                                break;
+                            case "\u751f\u6d3b":
+                                crumbSubNav = '&nbsp;-&nbsp' + data[i]['live-sub'];
+                                break;
+                            case "\u804a\u5427":
+                                crumbSubNav = '&nbsp;-&nbsp' + data[i]['talk-sub'];
+                                break;
+                        }
+                        var imgS = eval('(' + data[i]['images'] + ')');
+                        var videoS = eval('(' + data[i]['video'] + ')');
+                        imgHtml = (data[i].images=='[]\n\n\n\n\n\n\n')? '':'<img src="' + imgS[i].origina + ' " />'
+                        videoHtml = (data[i].video=='[]')? '':'<video src="' + videoS[i].origina + '" controls="controls"></video>'
+                        articleHtml += '<div class="intro-title">' + data[i].category + crumbSubNav+'</div>'
+                                + '<div class="intro-content">' + '<div class="dtl2-title">'
+                                + data[i].title + '</br>' + (data[i].title2?data[i].title2:'')+ '</div>'
+                                + '<div class="dtl2-content">' + '<div class="dtl2-word fL">'
+                                + '<div class="dtl2-sub-title">' + '<b>' + '信息来源：宝钢新闻中心'
+                                + '</b>' + '&nbsp;&nbsp' + '<span>' + timeBody
+                                + '&nbsp;&nbsp;' + '(' +data[i].commentCount + '次)'
+                                + '</span>' + '</div>' + '<div class="intro-remark-2">'
+                                + data[i].body + '</div>' + '</div>'
+                                + '<div class="dtl2-img fL">' + imgHtml
+                                + '</div>' + '</div>' + '</div>'
+                                + videoHtml;
+                        commentCount=data[i].commentCount;
+                    }
+
+                    console.log(articleHtml);
+
+                    $('.content').html(articleHtml);
+
+                    page.getCommentList(param);
+                    $('#commentNum').html('评论:' + commentCount);
+                }
+            });
+
+		});
+	</script>
+	</body>
+</html>

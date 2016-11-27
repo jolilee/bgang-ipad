@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>新闻主页</title>
+	<link rel="stylesheet" href="css/silder/themes/default/default.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/silder/themes/light/light.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/silder/themes/dark/dark.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/silder/themes/bar/bar.css" type="text/css" media="screen" />
+
+	<link rel="stylesheet" href="css/base.css" />
+
+	<!--<link rel="stylesheet" href="css/silder/nivo-slider.css?ver=1" type="text/css" media="screen" />-->
+    <link rel="stylesheet" href="css/silder/jquery.bxslider.css" type="text/css" media="screen" />
+
+	<script type="text/javascript" src="src/jquery-1.9.0.min.js"></script>
+    <!--<script type="text/javascript" src="src/jquery.nivo.slider.pack.js"></script>-->
+	<script type="text/javascript" src="src/base.js"></script>
+    <script type="text/javascript" src="src/iscroll.js"></script>
+    <script type="text/javascript" src="src/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="src/jquery.cookies.2.2.0.min.js"></script>
+
+
+</head>
+<body >
+	<div class="page">
+		<div class="title"></div>
+
+		<nav id="topNav">
+			<ul>
+              <li><a id="index" name="MNav" href="javascript:;">首页</a></li>
+			  <li><a id="xw" name="MNav" href="javascript:;" class="on">新闻</a></li>
+			  <li><a id="gj" name="MNav" href="javascript:;">广角</a></li>
+			  <li><a id="gs" name="MNav" href="javascript:;">故事</a></li>
+			  <li><a id="yj" name="MNav" href="javascript:;">业界</a></li>
+			  <li><a id="sh" name="MNav" href="javascript:;">生活</a></li>
+			  <li><a id="lb" name="MNav" href="javascript:;">聊吧</a></li>
+			</ul>
+		</nav>
+
+		<div class="content">
+			<div class="imgview fR">
+				<div class="bx-wrapper">
+					<ul id="slider" class="bxslider">
+						<!--<li><a slider="pic" tourl="detail_1.html">
+							<img src="image/newsimg/news_1.jpg" data-thumb="image/newsimg/news_1.jpg" alt="" title="宝钢1..." />
+						</a><div class="caption">宝钢1...</div></li>
+						<li><a slider="pic" tourl="detail_2.html">
+							<img src="image/newsimg/news_2.jpg" data-thumb="image/newsimg/news_2.jpg" alt="" title="宝钢2..." />
+						</a><div class="caption">宝钢1...</div></li>
+						
+						<li><a slider="pic" tourl="detail_3.html">
+							<img src="image/newsimg/news_3.jpg" data-thumb="image/newsimg/news_3.jpg" alt="" data-transition="slideInLeft" title="宝钢3..." />
+						</a><div class="caption">宝钢1...</div></li>
+						
+						<li><a slider="pic" tourl="detail_4.html">
+							<img src="image/newsimg/news_4.jpg" data-thumb="image/newsimg/news_4.jpg" alt="" title="宝钢4..." />
+						</a><div class="caption">宝钢1...</div></li>-->
+					</ul>
+				</div>
+				<div class="blue-line clear-margin"></div>
+
+				<!--<div class="block-news W600">-->
+					<!--<div class="allow-left fL"></div>-->
+					<div class="block-news-wrapper W600">
+                    <div class="block-news-panel fL">
+                        <ul class="block-news-content">
+							<!--<li>
+								<a href="javascript:;">
+									<label>职工方代表与企业方代表面对面</label>
+									<p>职工方代表与企业方代表面对面，双方围绕集体合同的具体条款，平等沟通协商。2月19日下午，集团公司总部集体协商会议在和</p> <i class="type-news"></i> 
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<label>职工方代表与企业方代表面对面</label>
+									<p class="t-overflow">职工方代表与企业方代表面对面，双方围绕集体合同的具体条款，平等沟通协商。2月19日下午，集团公司总部集体协商会议在和</p><i class="type-news"></i> 
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<label>职工方代表与企业方代表面对面</label>
+									<p class="t-overflow">职工方代表与企业方代表面对面，双方围绕集体合同的具体条款，平等沟通协商。2月19日下午，集团公司总部集体协商会议在和</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<label>职工方代表与企业方代表面对面</label>
+									<p class="t-overflow">职工方代表与企业方代表面对面，双方围绕集体合同的具体条款，平等沟通协商。2月19日下午，集团公司总部集体协商会议在和</p>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<label>职工方代表与企业方代表面对面</label>
+									<p class="t-overflow">职工方代表与企业方代表面对面，双方围绕集体合同的具体条款，平等沟通协商。2月19日下午，集团公司总部集体协商会议在和</p>
+								</a>
+							</li>-->
+						</ul>
+					</div>
+					<!--<div class="allow-right fL"></div>-->
+                    </div>
+				<!--</div>-->
+
+			</div>
+
+			<div class="news-home-list  fL">
+			    <div class="newslist-header"><a href="#" class="on">要闻</a><a href="#">基层</a>
+			    </div>
+			    <div id="newslist-wrapper">
+                    <div id="newslist-panel">
+				        <ul id="newscontent-main">
+
+					    <!--<li>
+						    <a>
+							本报讯  职工方代表与企业方代表面对面，双方围绕集体合同的具体条款，平等沟通协商。2月19日下午，集团公司总部集体协商会议在和
+						    </a>
+					    </li>
+					    <li>
+						<a>
+							本报讯  双方表示，要为打造高效活力总部各司其职、各尽所能，为公司进一步提升管理效率、改善经营绩效而共同努力。集团公司总经理何文波，
+						</a>
+					    </li>
+					    <li>
+						<a>本报讯  职工方代表与企业方代表面对面，双方围绕集体合同的具体条款，平等沟通协商。2月19日下午。</a>
+					    </li>
+					    <li>
+						<a>
+							本报讯  职工方代表与企业方代表面对面，双方围绕集体合同的具体条款，平等沟通协商。2月19日下午，集团公司总部集体协商会议在和
+						</a>
+					    </li>
+					    <li>
+						<a>
+							本报讯  双方表示，要为打造高效活力总部各司其职、各尽所能，为公司进一步提升管理效率、改善经营绩效而共同努力。集团公司总经理何文波，
+						</a>
+					    </li>
+					    <li>
+						<a>本报讯  职工方代表与企业方代表面对面，双方围绕集体合同的具体条款，平等沟通协商。2月19日下午。</a>
+					    </li>-->
+
+				    </ul>
+                        <ul id="newscontent-sub">
+
+                    </ul>
+                    </div>
+			    </div>
+
+			</div>
+		</div>
+
+		<nav id="footNav">
+			<ul>
+				<li class="press">
+					<a href="javascript:;" id="home">新闻</a>
+				</li>
+				<li>
+					<a href="javascript:;">广角</a>
+				</li>
+				<li>
+					<a href="javascript:;">故事</a>
+				</li>
+				<li>
+					<a href="javascript:;">业界</a>
+				</li>
+				<li>
+					<a href="javascript:;">生活</a>
+				</li>
+				<li>
+					<a href="javascript:;">聊吧</a>
+				</li>
+				<li>
+					<a href="javascript:;">查询</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<script>
+		$(document).ready(function() {
+
+            page.init();
+            $.ajax({
+                url: "http://baogang.dpsapi.com/api/list?type=xin_wen&field_xin_wen_class2_value=0",
+                dataType:'json',
+                success: function (data) {
+                    console.log(data);
+                    var i, l, tabHtml = '', video = '', pic = '';
+                    var typeArr = new Array();
+
+                    for ( i = 0, l = data.length; i < l;i+=1) {
+                        typeArr = data[i].class.split('');
+                        video = data[i].haveVideo>0 ? "&nbsp;&nbsp;<img src='image/newsvideoioc.png' alt='video' id='ioc'/>":""
+                        pic = data[i].havePicture>0 ? "&nbsp;&nbsp;<img src='image/newspicioc.png' alt='picture' id='ioc'/>":""
+                        tabHtml += '<li>' + '<a href="detail_'+typeArr[5]+'.html?id='+data[i].nid+'" onclick="nTabs(this,0);">' + '<b>' + data[i].title + '</b>' + '</br>'
+                                + data[i].body + '<div class="timeright">'+ video + pic + data[i].time + '</div>' + '</a>' +'</li>';
+                    }
+                    console.log(tabHtml);
+                    $('#newscontent-main').html(tabHtml);
+
+                    $.ajax({
+                        url: "http://baogang.dpsapi.com/api/list?type=xin_wen&field_xin_wen_class2_value=1",
+                        dataType:'json',
+                        success: function (data) {
+                            console.log(data);
+                            var i, l, subTabHtml = '', video = '', pic = '';
+                            var typeArr = new Array();
+                            for ( i = 0, l = data.length; i < l;i+=1) {
+                                typeArr = data[i].class.split('');
+                                video = data[i].haveVideo>0 ? "&nbsp;&nbsp;<img src='image/newsvideoioc.png' alt='video' id='ioc'/>":""
+                                pic = data[i].havePicture>0 ? "&nbsp;&nbsp;<img src='image/newspicioc.png' alt='picture' id='ioc'/>":""
+                                subTabHtml += '<li>' + '<a href="detail_'+typeArr[5]+'.html?id='+data[i].nid+'" onclick="nTabs(this,1);">' + '<b>' + data[i].title + '</b>' + '</br>'
+                                        + data[i].body + '<div class="timeright">' + video + pic + data[i].time + '</div>' + '</a>' +'</li>';
+                            }
+                            console.log(subTabHtml);
+                            $('#newscontent-sub').html(subTabHtml);
+
+                            page.listNewsHeight();
+
+                            var aScroll;
+
+                            aScroll = new IScroll('#newslist-wrapper', { scrollX: false, scrollY: true, mouseWheel: true,click: true });
+
+
+                        }
+                    });
+
+                }
+            });
+
+            $.ajax({
+                url: "http://baogang.dpsapi.com/api/slideshow?type_1=xin_wen",
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    var i, l, newsHtml = '';
+                    for (i = 0, l = data.length; i < l; i += 1) {
+
+                        newsHtml += '<li>' + '<a href="detail_2.html?id='+data[i].nid+'">'
+                                + '<img src="'+ data[i]["\u56fe\u7247"]+'" data-thumb="'+data[i]["\u56fe\u7247"]+'" title="'+data[i].title+'" />'
+                                + '</a>' + '<div class="caption">'+ data[i].title + '</div>' + '</li>' ;
+                    }
+                    console.log(newsHtml);
+                    $('#slider').html(newsHtml);
+                    $('.bxslider').bxSlider({
+                        pause:10000,
+                        auto:true
+                    });
+                }
+            });
+            $.ajax({
+                url: "http://baogang.dpsapi.com/api/list?type=xin_wen",
+                dataType: 'json',
+                success:function (data) {
+                    console.log(data);
+                    var i, l, blockNewsHtml = '', video = '', pic = '';
+                    var typeArr = new Array();
+                    for (i = 0, l = data.length; i < l; i += 1){
+                        typeArr = data[i].class.split('');
+                        video = data[i].haveVideo>0 ? "&nbsp;&nbsp;<img src='image/newsvideoioc.png' alt='video' id='ioc'/>":""
+                        pic = data[i].havePicture>0 ? "&nbsp;&nbsp;<img src='image/newspicioc.png' alt='picture' id='ioc'/>":""
+                        blockNewsHtml += '<li>' + '<a href="detail_'+typeArr[5]+'.html?id='+data[i].nid+'">'
+                                      + '<label>'+ data[i].title +'</label>' + '<p class="t-overflow">'
+                                      + data[i].body + '</p>' + video + pic + '<span class="timebody">' + data[i].time
+                                      + '</span>' +'</a>' + '</li>';
+
+                    }
+                    console.log(blockNewsHtml);
+                    $('.block-news-content').html(blockNewsHtml);
+                    page.blockNewsWidth();
+
+
+                    var bScroll;
+
+                    bScroll = new IScroll('.block-news-wrapper', { scrollX: true, scrollY: false, mouseWheel: true,click: true });
+                    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+
+                    page.hoverTab();
+
+
+                }
+            })
+        });
+	</script>
+
+</body>
+</html>
